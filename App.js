@@ -3,17 +3,15 @@ import Home from "./screens/home";
 import Quiz from "./screens/quiz";
 import Result from "./screens/result";
 import { NavigationContainer } from "@react-navigation/native";
+import MyStack from "./navigation";
 
 
 
 const App = () => {
   return(
-    <View style={styles.container}>
-      {/* <Home/> */}
-      {/* <Quiz/> */}
-      {/* <Result/> */}
-      <NavigationContainer></NavigationContainer>
-    </View>
+      <NavigationContainer>
+        <MyStack/>
+      </NavigationContainer>
   )
 }
 
