@@ -1,32 +1,34 @@
-import { StyleSheet, Image, Text, View, TouchableOpacity } from 'react-native'
-import React from 'react'
-import Title from '../components/title'
-const url = "https://cdni.iconscout.com/illustration/premium/thumb/happy-people-raising-and-waving-hands-6497213-5410645.png"
+import React from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Title from '../components/title';
 
-const Result = ({navigation}) => {
-  // const {score} = route.params
-  // const resultBanner= score>10?"https://cdni.iconscout.com/illustration/premium/thumb/men-celebrating-victory-4587301-3856211.png" :"https://cdni.iconscout.com/illustration/free/thumb/concept-about-business-failure-1862195-1580189.png"
+const Result = ({navigation, route}) => {
+  const {score} = route.params
+
+  const resultBanner= score>10?"https://cdni.iconscout.com/illustration/premium/thumb/men-celebrating-victory-4587301-3856211.png" :"https://cdni.iconscout.com/illustration/free/thumb/concept-about-business-failure-1862195-1580189.png"
   return (
     <View style={styles.container}>
-      <Title titleText='RESULTS' />
-      {/* <Text style={styles.scoreValue}>{score}</Text> */}
-      <View style = {styles.bannerContainer}>
-      <Image 
-                source={{uri:url}} 
-                style = {styles.banner} 
-                resizeMode='contain'
-            />
-      </View>
-      <View>
-        <TouchableOpacity onPress = {()=>{navigation.navigate('Home')}}  style = {styles.button}>
-          <Text>Home</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  )
-}
+<Title titleText='RESULTS' />
+<Text style={styles.scoreValue}>{score}</Text>
+<View style={styles.bannerContainer}>
+  <Image
+    source={{
+      uri:resultBanner,
+    }}
+    style={styles.banner}
+    resizeMode="contain"
+  />
+</View>
+<TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
+  <Text style={styles.buttonText}>GO TO HOME</Text>
+</TouchableOpacity>
+</View>
+  );
+};
 
-export default Result
+
+
+export default Result;
 
 const styles = StyleSheet.create({
   banner: {
