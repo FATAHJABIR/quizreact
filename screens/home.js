@@ -32,5 +32,9 @@ const styles = StyleSheet.create({
     bannerContainer:{
       justifyContent: 'center',
       alignItems: 'center'
+    },
+    container:{
+      paddingTop: 40,
+      paddingHorizontal: 20,
     }
 })

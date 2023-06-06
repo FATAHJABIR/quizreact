@@ -3,7 +3,7 @@ import React from 'react'
 
 const url = "https://cdni.iconscout.com/illustration/premium/thumb/happy-people-raising-and-waving-hands-6497213-5410645.png"
 
-const Result = () => {
+const Result = ({navigation}) => {
   return (
     <View>
       <View>
@@ -17,7 +17,7 @@ const Result = () => {
             />
       </View>
       <View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress = {()=>{navigation.navigate('Home')}} >
           <Text>Home</Text>
         </TouchableOpacity>
       </View>
