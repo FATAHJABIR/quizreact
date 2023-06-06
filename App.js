@@ -1,10 +1,18 @@
-import { StyleSheet, Text, View } from "react-native/types";
+import { StyleSheet, Text, View } from "react-native";
+import Home from "./screens/home";
+import Quiz from "./screens/quiz";
+import Result from "./screens/result";
+import { NavigationContainer } from "@react-navigation/native";
+
+
 
 const App = () => {
   return(
-    <View styles={styles.container}>
-      <Text>This is learnStuff</Text>
-      <Text>This is learnStuff</Text>
+    <View style={styles.container}>
+      {/* <Home/> */}
+      {/* <Quiz/> */}
+      {/* <Result/> */}
+      <NavigationContainer></NavigationContainer>
     </View>
   )
 }
@@ -15,6 +23,6 @@ const styles = StyleSheet.create({
 
   container: {
     paddingTop: 40,
-    paddingHorizontal: 16
-  }
-})
+    paddingHorizontal: 16,
+  },
+});
