@@ -5,8 +5,8 @@ const source = "https://ouch-cdn2.icons8.com/NYHT8-hDTdQuJ3LWw4OcQF1NCoKOD9_GSOb
 
 const Home = ({navigation}) => {
   return (
-    <View>
-      <Title/>
+    <View style = {styles.container}>
+      <Title titleText= "Home"/>
       <View  style={styles.bannerContainer}>
             <Image 
                 source={{uri:source}} 
@@ -14,8 +14,8 @@ const Home = ({navigation}) => {
                 resizeMode='contain'
             />
       </View>
-      <TouchableOpacity onPress={() => navigation.navigate("Quiz")}>
-        <Text>Mixed messages</Text>
+      <TouchableOpacity onPress={() => navigation.navigate("Quiz")} style = {styles.buttonStyling}>
+        <Text style = {styles.buttonText}>Mixed messages</Text>
       </TouchableOpacity>
     </View>
   )
@@ -24,17 +24,31 @@ const Home = ({navigation}) => {
 export default Home
 
 const styles = StyleSheet.create({
-    banner:{
-        height: 300,
-        width: 300,
-        // backgroundColor: "red"
-    },
-    bannerContainer:{
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    container:{
-      paddingTop: 40,
-      paddingHorizontal: 20,
-    }
-})
+  banner: {
+    height: 300,
+    width: 300,
+  },
+  bannerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  container: {
+    paddingTop: 40,
+    paddingHorizontal: 20,
+    height: '100%',
+  },
+  button: {
+    width: '100%',
+    backgroundColor: '#1A759F',
+    padding: 16,
+    borderRadius: 16,
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  buttonText: {
+    fontSize: 24,
+    fontWeight: '600',
+    color: 'white',
+  },
+});
